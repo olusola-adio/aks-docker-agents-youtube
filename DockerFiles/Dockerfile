@@ -30,6 +30,10 @@ RUN curl -fsSL https://download.docker.com/linux/static/stable/x86_64/docker-$DO
 ARG TARGETARCH=amd64
 ARG AGENT_VERSION=2.185.1
 
+WORKDIR /data
+COPY ./start.sh .
+RUN chmod +x start.sh
+
 WORKDIR /azp
 RUN if [ "$TARGETARCH" = "amd64" ]; then \
       AZP_AGENTPACKAGE_URL=https://vstsagentpackage.azureedge.net/agent/${AGENT_VERSION}/vsts-agent-linux-x64-${AGENT_VERSION}.tar.gz; \
