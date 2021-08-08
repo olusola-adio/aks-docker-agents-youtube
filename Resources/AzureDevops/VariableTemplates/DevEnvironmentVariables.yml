@@ -18,5 +18,5 @@ variables:
 - name: Environment
   value: 'youtube.docker'
 - name: DockerPoolName
-  value: 'MON - Docker - YouTube'
+  value: 'MON-Docker-YouTube'
 

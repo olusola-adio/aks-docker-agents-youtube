@@ -26,15 +26,21 @@ spec:
               cpu: "130m"
               memory: "300Mi"
           env:
-          - name: AZP_POOL
-            value: "__DockerPoolName__"
-          - name: AZP_TOKEN
-            valueFrom: 
+          - name: AZP_URL
+            valueFrom:
               secretKeyRef:
                 name: mon-azuredevops-pat-token
-                key: pattokensecret
-          - name: AZP_URL
-            value: __AzureDevOpsUrl__
+                key: AZP_URL
+          - name: AZP_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: mon-azuredevops-pat-token
+                key: AZP_TOKEN
+          - name: AZP_POOL
+            valueFrom:
+              secretKeyRef:
+                name: mon-azuredevops-pat-token
+                key: AZP_POOL
           securityContext:
             allowPrivilegeEscalation: false
           volumeMounts:
