@@ -65,7 +65,7 @@ stages:
               useClusterAdmin: true
               namespace: 'docker'
               secretType: generic
-              secretArguments: --from-literal=AZP_TOKEN=$(AzurePatToken)  --from-literal=AZP_URL=$(AzureDevOpsUrl)  --from-literal=AZP_POOL=''$(DockerPoolName)''
+              secretArguments: --from-literal=AZP_TOKEN=$(AzurePatToken)  --from-literal=AZP_URL=$(AzureDevOpsUrl)  --from-literal=AZP_POOL=$(DockerPoolName)
               secretName: mon-azuredevops-pat-token
               forceUpdate: true
           
